@@ -1,8 +1,22 @@
-.add-contact-area {
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap-reverse;
+          flex-flow: row wrap-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2vh;
+}
+
+main .add-contact-area {
   width: 35%;
 }
 
-.add-contact-area .add-form {
+main .add-contact-area .add-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,7 +26,16 @@
           flex-flow: column wrap;
 }
 
-.add-contact-area .add-form input {
+main .add-contact-area .add-form input {
+  width: 100%;
+}
+
+main .contacts-list-area {
+  height: 100vh;
+  width: 55%;
+}
+
+main .contacts-list-area table {
   width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
