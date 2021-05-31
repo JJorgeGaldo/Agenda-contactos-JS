@@ -1,0 +1,18 @@
+.add-contact-area {
+  width: 35%;
+}
+
+.add-contact-area .add-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+.add-contact-area .add-form input {
+  width: 100%;
+}
+/*# sourceMappingURL=styles.css.map */

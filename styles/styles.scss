@@ -1,0 +1,10 @@
+.add-contact-area{
+    width: 35%;
+    .add-form{
+        display: flex;
+        flex-flow: column wrap;
+        input{
+            width: 100%;
+        }
+    }
+}
