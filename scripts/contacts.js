@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const contacts = document.querySelector(".contacts")
     const templateContact = document.getElementById("template-contact").content
+    
 
     // Declare the fragment to include the info into it and therefore can place it into the template and show it in the DOM
     const fragment = document.createDocumentFragment() 
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const addContact = document.getElementById("add")
     const clearInputs = document.getElementById("clear")
+    const contentAction = document.getElementById("contacts")
 
     // First of all I'm going to load the JSON data and show it in the web.
     // For doing so I need to fetch the JSON data.
@@ -19,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
         try{
             const res = await fetch ("../data.json")
             data = await res.json()
-            console.log(data)
+            //console.log(data)
             contactsList = data
             console.log(contactsList)
             putContacts(contactsList)
@@ -34,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // I create this function that go throw the data fetched, and place it into the web
     const putContacts = () =>{
-        //contact.innerHTML = ""
         Object.values(contactsList).forEach(contact => {
             templateContact.getElementById("template-name").textContent = contact.name
             templateContact.getElementById("template-surname").textContent = contact.surname
@@ -88,7 +89,13 @@ document.addEventListener("DOMContentLoaded", function(){
         document.querySelectorAll("input")[1].value = ""
         document.querySelectorAll("input")[2].value = ""
         document.querySelectorAll("input")[3].value = ""
+        console.log(contentAction)
     }
+    
+    // Lets add an click event for the Actions in the list
+    /* contentAction.addEventListener("click", () =>{
+        console.log("Action")
+    }); */
 
     // Now I'm going to dump the info into the LocalStorage
 
