@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function(){
     const contacts = document.querySelector("#contacts")
     const templateContact = document.getElementById("template-contact").content
     
-
     // Declare the fragment to include the info into it and therefore can place it into the template and show it in the DOM
     const fragment = document.createDocumentFragment() 
 
@@ -91,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     const clearInputsFunc = () =>{
+        addContact.textContent = "Add Contact"
         document.querySelectorAll("input")[0].value = ""
         document.querySelectorAll("input")[1].value = ""
         document.querySelectorAll("input")[2].value = ""
