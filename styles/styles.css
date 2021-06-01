@@ -54,4 +54,8 @@ main .contacts-list-area table {
 main .contacts-list-area table {
   text-align: center;
 }
+
+main .contacts-list-area table .fas {
+  color: #db89de;
+}
 /*# sourceMappingURL=styles.css.map */
