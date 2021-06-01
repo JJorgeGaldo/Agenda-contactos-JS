@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     const putContacts = data =>{
         data.forEach(contact => {
-            templateContact.querySelector("td")[0].textContent = contact.name
-            templateContact.querySelector("td")[1].textContent = contact.surname
-            templateContact.querySelector("td")[2].textContent = contact.phone
-            templateContact.querySelector("td")[3].textContent = contact.mail
+            templateContact.getElementById("template-name").textContent = contact.name
+            templateContact.getElementById("template-surname").textContent = contact.surname
+            templateContact.getElementById("template-phone").textContent = contact.phone
+            templateContact.getElementById("template-mail").textContent = contact.mail
         
             const clone = templateContact.cloneNode(true)
             fragment.appendChild(clone)

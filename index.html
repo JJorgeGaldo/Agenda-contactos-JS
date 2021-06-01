@@ -16,41 +16,39 @@
     </header>
     <main>
         <section class="add-contact-area">
-            <form id="add-form" action="#">
-                <input type="text" placeholder="Intro the Name">
-                <input type="text" placeholder="Intro los Surname">
-                <input type="text" placeholder="Intro the phone number">
-                <input type="email" placeholder="Intro the mail">
-                <div>
-                    <button type="reset">Clear all</button>
-                    <button type="submit" id="add">Add Contact</button>
-                </div>
-            </form>
+            <input type="text" placeholder="Intro the Name" id="name">
+            <input type="text" placeholder="Intro los Surname" id="surname">
+            <input type="text" placeholder="Intro the phone number" id="phone">
+            <input type="email" placeholder="Intro the mail" id="mail">
+            <div>
+                <button type="reset">Clear all</button>
+                <button type="submit" id="add">Add Contact</button>
+            </div>
         </section>
         <section class="search-contact"></section>
         <section class="contacts-list-area">
             <table>
-                <th class="table-header">
-                    <th>Name</th>
-                    <th>Surname</th>
-                    <th>Telephone</th>
-                    <th>Mail</th>
-                    <th>Actions</th>
-                </th>
-                <tbody class="contacts">
-
-                </tbody>
+                <thead>
+                    <tr class="table-header">
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Telephone</th>
+                        <th>Mail</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="contacts"></tbody> <!-- Here we´ll place the contacts info template -->
             </table>
         </section>
     </main>
     
     <template id="template-contact">
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+        <tr>
+            <td id="template-name"></td>
+            <td id="template-surname"></td>
+            <td id="template-phone"></td>
+            <td id="template-mail"></td>
+        </tr>
     </template>
 
 </body>
