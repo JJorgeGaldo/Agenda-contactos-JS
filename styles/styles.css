@@ -54,10 +54,4 @@ main .contacts-list-area table {
 main .contacts-list-area table {
   text-align: center;
 }
-
-main .contacts-list-area table a.fas.fa-user {
-  text-decoration: none;
-  width: 50%;
-  color: #47d1db;
-}
 /*# sourceMappingURL=styles.css.map */

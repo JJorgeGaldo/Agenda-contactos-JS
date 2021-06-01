@@ -32,10 +32,8 @@ main{
         }
         table{
             text-align: center;
-            a.fas.fa-user{
-                text-decoration: none;
-                width: 50%;
-                color: $azul;
+            .fas{
+                //color: $rosa;
             }
         }
     }

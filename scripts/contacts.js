@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function(){
-
-    const contacts = document.querySelector(".contacts")
+    
+    const contacts = document.querySelector("#contacts")
     const templateContact = document.getElementById("template-contact").content
     
 
@@ -24,19 +24,17 @@ document.addEventListener("DOMContentLoaded", function(){
             //console.log(data)
             contactsList = data
             console.log(contactsList)
-            putContacts(contactsList)
+            putContacts()
         }catch (err){
             console.log(err)
         }
     }
 
-
-    // I call the function to start the process and show the info in the web
-    fetchData()
-
     // I create this function that go throw the data fetched, and place it into the web
     const putContacts = () =>{
         Object.values(contactsList).forEach(contact => {
+
+            templateContact.getElementById("template-id").textContent = contact.id
             templateContact.getElementById("template-name").textContent = contact.name
             templateContact.getElementById("template-surname").textContent = contact.surname
             templateContact.getElementById("template-phone").textContent = contact.phone
@@ -69,6 +67,14 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     const addContactRetrieve = e =>{
+        if(addContact.classList.contains("edit")){
+            console.log("Edited")
+            addContact.classList = ""
+            addContact.textContent = "Add Contact"
+            clearInputsFunc()
+            alert("Contact Edited")
+            return
+        }
         let tempContact = {
             name : document.getElementById("input-name").value,
             surname : document.getElementById("input-surname").value,
@@ -89,13 +95,37 @@ document.addEventListener("DOMContentLoaded", function(){
         document.querySelectorAll("input")[1].value = ""
         document.querySelectorAll("input")[2].value = ""
         document.querySelectorAll("input")[3].value = ""
-        console.log(contentAction)
+        //console.log(contentAction)
     }
     
     // Lets add an click event for the Actions in the list
-    /* contentAction.addEventListener("click", () =>{
-        console.log("Action")
-    }); */
+    contentAction.addEventListener("click", e =>{
+        actionButton(e)
+    })
+
+    const actionButton = e =>{
+        if(e.target.classList.contains("fa-user-edit")){
+            console.log("Edit")
+            const temp = (contactsList[e.target.parentNode.parentNode.children[0].textContent-1])
+            console.log(temp)
+            document.querySelectorAll("input")[0].value = temp.name
+            document.querySelectorAll("input")[1].value = temp.surname
+            document.querySelectorAll("input")[2].value = temp.phone
+            document.querySelectorAll("input")[3].value = temp.mail
+            addContact.textContent = "Update Contact data"
+            addContact.className = "edit"
+
+        }
+        if(e.target.classList.contains("fa-user-minus")){
+            console.log("Delete")
+        }
+    }
+
+
+    // I call the functions to show the info in the web and to clean the input fields
+    fetchData()
+    clearInputsFunc()
+
 
     // Now I'm going to dump the info into the LocalStorage
 
