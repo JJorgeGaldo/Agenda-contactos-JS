@@ -63,6 +63,10 @@ document.addEventListener("DOMContentLoaded", function(){
         addContactRetrieve(e)
     });
 
+    clearInputs.addEventListener("click", () =>{
+        clearInputsFunc()
+    });
+
     const addContactRetrieve = e =>{
         let tempContact = {
             name : document.getElementById("input-name").value,
