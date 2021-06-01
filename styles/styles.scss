@@ -1,8 +1,13 @@
+/* Declaración de colores */
+$rosa: rgb(219,137,222);
+$azul: rgb(71, 209, 219);
+
 main{
     display: flex;
     flex-flow: row wrap-reverse;
     justify-content: space-between;
     padding: 2vh;
+    
     .add-contact-area{
         width: 35%;
         .add-form{
@@ -21,6 +26,11 @@ main{
         }
         table{
             text-align: center;
+            a.fas.fa-user{
+                text-decoration: none;
+                width: 50%;
+                color: $azul;
+            }
         }
     }
 }

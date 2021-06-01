@@ -1,23 +1,41 @@
-document.addEventListener("DOMContentLoaded", () =>{
+
+document.addEventListener("DOMContentLoaded", function(){
+
     const contacts = document.querySelector(".contacts")
     const templateContact = document.getElementById("template-contact").content
+
+    // Declare the fragment to include the info into it and therefore can place it into the template and show it in the DOM
     const fragment = document.createDocumentFragment() 
+
+    // Lets create an object that will contains the contacts list
+    let contactsList = {}
+
+    const addContact = document.getElementById("add")
+    const clearInputs = document.getElementById("clear")
+
     // First of all I'm going to load the JSON data and show it in the web.
     // For doing so I need to fetch the JSON data.
     const fetchData = async() => {
         try{
             const res = await fetch ("../data.json")
-            const data = await res.json()
+            data = await res.json()
             console.log(data)
-            putContacts(data)
+            contactsList = data
+            console.log(contactsList)
+            putContacts(contactsList)
         }catch (err){
             console.log(err)
         }
     }
 
+
+    // I call the function to start the process and show the info in the web
+    fetchData()
+
     // I create this function that go throw the data fetched, and place it into the web
-    const putContacts = data =>{
-        data.forEach(contact => {
+    const putContacts = () =>{
+        //contact.innerHTML = ""
+        Object.values(contactsList).forEach(contact => {
             templateContact.getElementById("template-name").textContent = contact.name
             templateContact.getElementById("template-surname").textContent = contact.surname
             templateContact.getElementById("template-phone").textContent = contact.phone
@@ -36,9 +54,39 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 
 
-    // I call the function to start the process
-    fetchData()
 
+    // Add a contact.
+    // First I create an listener for the click in the add button
+    addContact.addEventListener("click", e =>{
+        console.log("presionaste add")
+        // Once its clicked, we retrieve the info of all the inputs and include into an temporary object
+        addContactRetrieve(e)
+    });
+
+    const addContactRetrieve = e =>{
+        let tempContact = {
+            name : document.getElementById("input-name").value,
+            surname : document.getElementById("input-surname").value,
+            phone : document.getElementById("input-phone").value,
+            mail : document.getElementById("input-mail").value
+        }
+
+        // Now I push the object to the end of the Contacts list
+        
+        contactsList[contactsList.length] = tempContact
+        contacts.innerHTML = ""
+        putContacts(contactsList)
+        clearInputsFunc()
+    }
+
+    const clearInputsFunc = () =>{
+        document.querySelectorAll("input")[0].value = ""
+        document.querySelectorAll("input")[1].value = ""
+        document.querySelectorAll("input")[2].value = ""
+        document.querySelectorAll("input")[3].value = ""
+    }
+
+    // Now I'm going to dump the info into the LocalStorage
 
 
 

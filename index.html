@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <script src="https://kit.fontawesome.com/a9d98af9cc.js" crossorigin="anonymous"></script>
+    <!-- End Font Awesome -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/contacts.js"></script>
@@ -16,10 +21,10 @@
     </header>
     <main>
         <section class="add-contact-area">
-            <input type="text" placeholder="Intro the Name" id="name">
-            <input type="text" placeholder="Intro los Surname" id="surname">
-            <input type="text" placeholder="Intro the phone number" id="phone">
-            <input type="email" placeholder="Intro the mail" id="mail">
+            <input type="text" placeholder="Intro the Name" id="input-name">
+            <input type="text" placeholder="Intro los Surname" id="input-surname">
+            <input type="text" placeholder="Intro the phone number" id="input-phone">
+            <input type="email" placeholder="Intro the mail" id="input-mail">
             <div>
                 <button type="reset">Clear all</button>
                 <button type="submit" id="add">Add Contact</button>
@@ -49,6 +54,10 @@
             <td id="template-surname"></td>
             <td id="template-phone"></td>
             <td id="template-mail"></td>
+            <td class="template-buttons-container">
+                <a href="#" class="fas fa-user-edit"></a>
+                <a href="#" class="fas fa-user-minus"></a>
+            </td>
         </tr>
     </template>
 
