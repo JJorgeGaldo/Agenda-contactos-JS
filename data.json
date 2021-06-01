@@ -34,6 +34,18 @@
       "surname": "Garden",
       "phone": "+34611777888",
       "mail": "noden@isoa.com"
+    },
+    {
+      "name": "Juan",
+      "surname": "Jorge",
+      "phone": "+34611432342",
+      "mail": "jj@g.es"
+    },
+    {
+      "name": "Boby",
+      "surname": "Fisher",
+      "phone": "+34622333444",
+      "mail": "bf@sher.com"
     }
   ]
   

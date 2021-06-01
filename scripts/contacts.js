@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(){
             mail : document.getElementById("input-mail").value
         }
 
-        // Now I push the object to the end of the Contacts list
+        // Now I include tempContact in contactsList and call the function putContacts to send the full contactsList to the Contacts list
         
         contactsList[contactsList.length] = tempContact
         contacts.innerHTML = ""
