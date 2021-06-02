@@ -7,75 +7,45 @@ body {
 
 .logo {
   height: 10vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   padding-left: 3vw;
 }
-
 .logo img {
   height: 10vh;
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap-reverse;
-          flex-flow: row wrap-reverse;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-flow: row wrap-reverse;
+  justify-content: space-between;
   padding: 2vh;
 }
-
 main .add-contact-area .input-continent {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   height: 35vh;
 }
-
 main .add-contact-area .input-continent #input-id {
   display: none;
 }
-
 main .add-contact-area .button-area {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   height: 10vh;
   padding: 1.5vh;
 }
-
 main .contacts-list-area {
   height: 100vh;
 }
-
 main .contacts-list-area table {
   width: 100%;
 }
-
 main .contacts-list-area table {
   text-align: center;
 }
-
 main .contacts-list-area table .fas {
   color: #db89de;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
