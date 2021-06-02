@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function(){
     // I create this function that go throw the data fetched, and place it into the web
     const putContacts = () =>{
         Object.values(contactsList).forEach(contact => {
-
             templateContact.getElementById("template-id").textContent = contact.id
             templateContact.getElementById("template-name").textContent = contact.name
             templateContact.getElementById("template-surname").textContent = contact.surname
@@ -49,9 +48,6 @@ document.addEventListener("DOMContentLoaded", function(){
         /* I add the fragment info to the element I want in the HTML (I previously declared the contacts variable). Now the info is shown in the correct place into the HTML */
         contacts.appendChild(fragment)
     }
-
-
-
 
     // Add a contact.
     // First I create an listener for the click in the add button
@@ -88,6 +84,35 @@ document.addEventListener("DOMContentLoaded", function(){
             return
         }
 
+        /* If we are deleting a contact we do this: */
+        if(addContact.classList.contains("delete")){
+            console.log("Deleted")
+            addContact.className = ""
+            addContact.textContent = "Add Contact"
+            console.log(contactsList)
+
+            const tempList = contactsList.filter( contactToDel => contactToDel.id != document.querySelectorAll("input")[0].value)
+            console.log(tempList)
+
+            tempList.forEach(element => {
+                if(element.id - tempList.indexOf(element) > 1){
+                    //console.log(tempList.indexOf(element))
+                    //console.log(element.id)
+                    element.id -= 1
+                    //console.log(element.id)
+                }
+            });
+            //console.log(tempList)
+            contactsList = tempList
+            //console.log(contactsList)
+            contacts.innerHTML = ""
+            putContacts(contactsList)
+            clearInputsFunc()
+            alert("Contact successfuly deleted")
+            return
+        }
+
+
         /* If we are adding a new contact we do this: */
         let tempContact = {
             id: contactsList.length+1,
@@ -121,22 +146,30 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 
     const actionButton = e =>{
+        const temp = (contactsList[e.target.parentNode.parentNode.children[0].textContent-1])
+        console.log(temp)
+        document.querySelectorAll("input")[0].value = temp.id
+        document.querySelectorAll("input")[1].value = temp.name
+        document.querySelectorAll("input")[2].value = temp.surname
+        document.querySelectorAll("input")[3].value = temp.phone
+        document.querySelectorAll("input")[4].value = temp.mail
+
+        // Edit
         if(e.target.classList.contains("fa-user-edit")){
             console.log("Edit")
-            const temp = (contactsList[e.target.parentNode.parentNode.children[0].textContent-1])
-            console.log(temp)
-            document.querySelectorAll("input")[0].value = temp.id
-            document.querySelectorAll("input")[1].value = temp.name
-            document.querySelectorAll("input")[2].value = temp.surname
-            document.querySelectorAll("input")[3].value = temp.phone
-            document.querySelectorAll("input")[4].value = temp.mail
             addContact.textContent = "Update Contact data"
             addContact.className = "edit"
-
+            
         }
+
+        // Delete
         if(e.target.classList.contains("fa-user-minus")){
             console.log("Delete")
+            console.log(temp)
+            addContact.textContent = "Delete Contact data"
+            addContact.className = "delete"
         }
+        e.stopPropagation()
     }
 
 

@@ -13,15 +13,20 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/contacts.js"></script>
     <title>Contacts list</title>
+    <link rel="icon" href="/images/favicon.png">
 </head>
 <body>
     <header>
-        <h1>Contacts list project</h1>
+        <div class="logo">
+            <img src="/images/Contacts-icon.jpeg" alt="Contacts book"> 
+            <h1>Contacts list project</h1>
+        </div>
         <p>This is a project for my portfolio using JavaScript in wich I'm going to create an app for managing my contacts</p>
     </header>
     <main>
         <section class="add-contact-area">
             <div class="input-continent">
+                <input type="text" placeholder="Id" id="input-id" disabled>
                 <input type="text" placeholder="Intro the Name" id="input-name">
                 <input type="text" placeholder="Intro los Surname" id="input-surname">
                 <input type="text" placeholder="Intro the phone number" id="input-phone">
