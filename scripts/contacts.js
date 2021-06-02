@@ -66,15 +66,31 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     const addContactRetrieve = e =>{
+        /* If we are editing a contact, we do this: */
         if(addContact.classList.contains("edit")){
             console.log("Edited")
-            addContact.classList = ""
+            addContact.className = ""
             addContact.textContent = "Add Contact"
+            console.log(document.querySelectorAll("input")[0].value)
+            contactsList.forEach(element => {
+                if(element.id == document.querySelectorAll("input")[0].value){
+                    element.name = document.querySelectorAll("input")[1].value
+                    element.surname = document.querySelectorAll("input")[2].value
+                    element.phone = document.querySelectorAll("input")[3].value
+                    element.mail = document.querySelectorAll("input")[4].value
+                }
+            });
+            console.log(contactsList)
+            contacts.innerHTML = ""
+            putContacts(contactsList)
             clearInputsFunc()
-            alert("Contact Edited")
+            alert("Contact successfuly edited")
             return
         }
+
+        /* If we are adding a new contact we do this: */
         let tempContact = {
+            id: contactsList.length+1,
             name : document.getElementById("input-name").value,
             surname : document.getElementById("input-surname").value,
             phone : document.getElementById("input-phone").value,
@@ -95,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function(){
         document.querySelectorAll("input")[1].value = ""
         document.querySelectorAll("input")[2].value = ""
         document.querySelectorAll("input")[3].value = ""
+        document.querySelectorAll("input")[4].value = ""
         //console.log(contentAction)
     }
     
@@ -108,10 +125,11 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log("Edit")
             const temp = (contactsList[e.target.parentNode.parentNode.children[0].textContent-1])
             console.log(temp)
-            document.querySelectorAll("input")[0].value = temp.name
-            document.querySelectorAll("input")[1].value = temp.surname
-            document.querySelectorAll("input")[2].value = temp.phone
-            document.querySelectorAll("input")[3].value = temp.mail
+            document.querySelectorAll("input")[0].value = temp.id
+            document.querySelectorAll("input")[1].value = temp.name
+            document.querySelectorAll("input")[2].value = temp.surname
+            document.querySelectorAll("input")[3].value = temp.phone
+            document.querySelectorAll("input")[4].value = temp.mail
             addContact.textContent = "Update Contact data"
             addContact.className = "edit"
 
