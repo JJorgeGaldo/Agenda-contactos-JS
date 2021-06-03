@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function(){
         /* If we are editing a contact, we do this: */
         if(addContact.classList.contains("edit")){
             console.log("Edited")
-            addContact.className = ""
+            addContact.className = "button"
             addContact.textContent = "Add Contact"
             console.log(document.querySelectorAll("input")[0].value)
             contactsList.forEach(element => {
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function(){
         /* If we are deleting a contact we do this: */
         if(addContact.classList.contains("delete")){
             console.log("Deleted")
-            addContact.className = ""
+            addContact.className = "button"
             addContact.textContent = "Add Contact"
             console.log(contactsList)
 
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if(e.target.classList.contains("fa-user-edit")){
             console.log("Edit")
             addContact.textContent = "Update Contact data"
-            addContact.className = "edit"
+            addContact.classList = "button edit"
             
         }
 
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log("Delete")
             console.log(temp)
             addContact.textContent = "Delete Contact data"
-            addContact.className = "delete"
+            addContact.classList = "button delete"
         }
         e.stopPropagation()
     }

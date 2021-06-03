@@ -1,34 +1,43 @@
 /* Declaración de colores */
 $rosa: rgb(219,137,222);
-$azul: rgb(71, 209, 219);
+$azul: #3C96D3;
 
 body{
     width: 95%;
     margin: 0 auto;
 }
 .logo{
+    margin-top: 1vh;
     height: 10vh;
     display: flex;
     flex-direction: row;
     padding-left: 3vw;
+    font-size: .9rem;
     img{
         height: 10vh;
     }
 }
 main{
+    width: 100%;
     display: flex;
-    flex-flow: row wrap-reverse;
+    flex-flow: row wrap;
     justify-content: space-between;
-    padding: 2vh;
+    //padding: 1vh;
     
     .add-contact-area{
-        //width: 35%;
+        width: 100%;
+        margin: 5vh 0;
         .input-continent{
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             width: 100%;
-            height: 35vh;
+            height: 20vh;
+            .input{
+                border: none;
+                border-bottom: 1px solid $azul;
+                outline: none;
+            }
             #input-id{
                 display: none;
             }
@@ -38,11 +47,28 @@ main{
             justify-content: space-around;
             height: 10vh;
             padding: 1.5vh;
+            margin-top: 2vh;
+            .button{
+                height: 5vh;
+                max-height: 40px;
+                width: 40vw;
+                max-width: 250px;
+                border: 2px solid $azul;
+                box-shadow: 0 5px navy;
+                //box-shadow: 4px 0 navy;
+                border-radius: 5px;
+                &:active{
+                    box-shadow: 0 2px rgb(1, 1, 73);
+                    transform: translateY(3px);
+                }
+            }
         }
     }
     .contacts-list-area{
-        height: 100vh;
+        //height: 100vh;
         //width: 55%;
+        overflow-y: scroll;
+        
         table{
             width: 100%;
         }
