@@ -19,26 +19,31 @@
     <header>
         <div class="logo">
             <img src="/images/Contacts-icon.jpeg" alt="Contacts book"> 
-            <h1>Contacts list project</h1>
+            <h1>Contacts list</h1>
         </div>
-        <p>This is a project for my portfolio using JavaScript in wich I'm going to create an app for managing my contacts</p>
+        <div class="summarize">
+            <div class="line"></div>
+            <p>You can <span>add</span> a new contact by filling in the data bellow.</p>
+            <p>You can also <span>edit</span> an contact or <span>delete</span> it by selecting the action directly from each contact in the bottom list</p>
+            <div class="line"></div>
+        </div>
     </header>
     <main>
         <section class="add-contact-area">
             <div class="input-continent">
                 <input class="input" type="text" placeholder="Id" id="input-id" disabled>
-                <input class="input" type="text" placeholder="Intro the Name" id="input-name">
-                <input class="input" type="text" placeholder="Intro los Surname" id="input-surname">
-                <input class="input" type="text" placeholder="Intro the phone number" id="input-phone">
-                <input class="input" type="email" placeholder="Intro the mail" id="input-mail">
+                <input class="input" type="text" placeholder="Name" id="input-name" required>
+                <input class="input" type="text" placeholder="Surname" id="input-surname">
+                <input class="input" type="text" placeholder="Phone number" id="input-phone">
+                <input class="input" type="email" placeholder="Mail" id="input-mail">
             </div>
             
             <div class="button-area">
                 <button class="button" type="reset" id="clear">Clear all inputs</button>
-                <button class="button" type="submit" id="add"><span class="fas fa-user-plus"></span> Add Contact</button>
+                <button class="button" type="submit" id="add"></button>
             </div>
         </section>
-        <!-- <section class="search-contact"></section> -->
+        <div class="line"></div>
         <section class="contacts-list-area">
             <table>
                 <thead>

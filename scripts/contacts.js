@@ -112,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function(){
             return
         }
 
-
         /* If we are adding a new contact we do this: */
         let tempContact = {
             id: contactsList.length+1,
@@ -157,16 +156,15 @@ document.addEventListener("DOMContentLoaded", function(){
         // Edit
         if(e.target.classList.contains("fa-user-edit")){
             console.log("Edit")
-            addContact.textContent = "Update Contact data"
+            addContact.textContent = "Update Contact"
             addContact.classList = "button edit"
-            
         }
 
         // Delete
         if(e.target.classList.contains("fa-user-minus")){
             console.log("Delete")
             console.log(temp)
-            addContact.textContent = "Delete Contact data"
+            addContact.textContent = "Delete Contact"
             addContact.classList = "button delete"
         }
         e.stopPropagation()
