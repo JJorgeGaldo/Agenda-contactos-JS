@@ -13,6 +13,13 @@ body .line {
   margin-top: 4vh;
 }
 
+body header {
+  border-radius: 5px;
+  background: white;
+  background: -webkit-gradient(linear, left top, right top, color-stop(15%, white), color-stop(40%, rgba(60, 150, 211, 0.793155)), color-stop(70%, rgba(231, 105, 93, 0.790354)), to(rgba(251, 176, 4, 0.641894)));
+  background: linear-gradient(90deg, white 15%, rgba(60, 150, 211, 0.793155) 40%, rgba(231, 105, 93, 0.790354) 70%, rgba(251, 176, 4, 0.641894) 100%);
+}
+
 body header .logo {
   margin: 2vh 0 3vh;
   height: 10vh;
@@ -34,17 +41,17 @@ body header .logo img {
   height: 10vh;
 }
 
-body header .summarize {
+body .summarize {
   color: #495865;
 }
 
-body header .summarize p {
+body .summarize p {
   margin: 0;
   padding: 2vh;
   text-align: justify;
 }
 
-body header .summarize p span {
+body .summarize p span {
   color: #E7695D;
   font-style: italic;
 }
@@ -128,9 +135,7 @@ body main .add-contact-area .button-area {
 }
 
 body main .add-contact-area .button-area .button {
-  height: 5vh;
-  max-height: 40px;
-  min-height: 30px;
+  height: 40px;
   width: 40vw;
   max-width: 230px;
   font-weight: bold;

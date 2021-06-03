@@ -1,6 +1,6 @@
 /* Declaración de colores */
 $rosa: rgb(219,137,222);
-$azul-tabla: rgba(60,150,211,.4);
+$azul-tabla: rgba(60, 150, 211, 0.4);
 $azul-claro: #3c96d3;
 $azul-claro-oscuro1: #495865;
 $azul-claro-oscuro2: #2D3F4E;
@@ -21,6 +21,9 @@ body{
         margin-top: 4vh;
     }
     header{
+        border-radius: 5px;
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 15%, rgba(60,150,211,0.7931547619047619) 40%, rgba(231,105,93,0.7903536414565826) 70%, rgba(251,176,4,0.6418942577030813) 100%);
         .logo{
             margin: 2vh 0 3vh;
             height: 10vh;
@@ -33,19 +36,19 @@ body{
                 height: 10vh;
             }
         }
-        .summarize{
-            color: $azul-claro-oscuro1;
-            p{
-                margin: 0;
-                padding: 2vh;
-                text-align: justify;
-                span{
-                    color: $rojo;
-                    font-style: italic;
-                }
+    }
+    .summarize{
+        color: $azul-claro-oscuro1;
+        p{
+            margin: 0;
+            padding: 2vh;
+            text-align: justify;
+            span{
+                color: $rojo;
+                font-style: italic;
             }
-            
         }
+        
     }
     main{
         width: 100%;
@@ -92,9 +95,9 @@ body{
                 padding: 1.5vh;
                 margin-top: 2vh;
                 .button{
-                    height: 5vh;
-                    max-height: 40px;
-                    min-height: 30px;
+                    height: 40px;
+                    //max-height: 40px;
+                    //min-height: 30px;
                     width: 40vw;
                     max-width: 230px;
                     font-weight: bold;
