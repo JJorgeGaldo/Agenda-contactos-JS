@@ -38,7 +38,13 @@ body header .summarize {
   color: #495865;
 }
 
-body header .summarize span {
+body header .summarize p {
+  margin: 0;
+  padding: 2vh;
+  text-align: justify;
+}
+
+body header .summarize p span {
   color: #E7695D;
   font-style: italic;
 }
@@ -77,7 +83,7 @@ body main .add-contact-area .input-continent {
 
 body main .add-contact-area .input-continent .input {
   border: none;
-  border-bottom: 1px solid #3C96D3;
+  border-bottom: 1px solid #3c96d3;
   outline: none;
   color: #2D3F4E;
   font-weight: bold;
@@ -162,7 +168,22 @@ body main .contacts-list-area table {
   text-align: center;
 }
 
-body main .contacts-list-area table .fas {
-  color: #db89de;
+body main .contacts-list-area table tbody tr:nth-child(odd) {
+  background-color: rgba(60, 150, 211, 0.4);
+}
+
+body main .contacts-list-area table .template-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+body main .contacts-list-area table .template-buttons-container .fas {
+  color: #E7695D;
+  background-color: transparent;
+  border: none;
+  margin-left: 2px;
 }
 /*# sourceMappingURL=styles.css.map */
