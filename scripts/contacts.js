@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // Lets create an object that will contains the contacts list
     let contactsList = {}
-
+    
     const addContact = document.getElementById("add")
     const clearInputs = document.getElementById("clear")
     const contentAction = document.getElementById("contacts")
@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function(){
         /* If we are editing a contact, we do this: */
         if(addContact.classList.contains("edit")){
             console.log("Edited")
+            clearInputs.textContent = "Clear inputs"
             addContact.className = "button"
             addContact.textContent = "Add Contact"
             console.log(document.querySelectorAll("input")[0].value)
@@ -87,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function(){
         /* If we are deleting a contact we do this: */
         if(addContact.classList.contains("delete")){
             console.log("Deleted")
+            clearInputs.textContent = "Clear inputs"
             addContact.className = "button"
             addContact.textContent = "Add Contact"
             console.log(contactsList)
@@ -130,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     const clearInputsFunc = () =>{
+        clearInputs.textContent = "Clear inputs"
         addContact.textContent = "Add Contact"
         document.querySelectorAll("input")[0].value = ""
         document.querySelectorAll("input")[1].value = ""
@@ -156,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // Edit
         if(e.target.classList.contains("fa-user-edit")){
             console.log("Edit")
+            clearInputs.textContent = "Cancel"
             addContact.textContent = "Update Contact"
             addContact.classList = "button edit"
         }
@@ -164,6 +168,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if(e.target.classList.contains("fa-user-minus")){
             console.log("Delete")
             console.log(temp)
+            clearInputs.textContent = "Cancel"
             addContact.textContent = "Delete Contact"
             addContact.classList = "button delete"
         }
