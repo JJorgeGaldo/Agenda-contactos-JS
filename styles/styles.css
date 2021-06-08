@@ -166,11 +166,33 @@ body main .contacts-list-area {
 }
 
 body main .contacts-list-area table {
-  width: 100%;
+  width: auto;
+  table-layout: fixed;
+  text-align: left;
+  margin-bottom: 3vh;
 }
 
-body main .contacts-list-area table {
-  text-align: center;
+body main .contacts-list-area table th {
+  padding-left: 25px;
+}
+
+body main .contacts-list-area table th:first-child {
+  padding-left: 0;
+}
+
+body main .contacts-list-area table tbody td {
+  width: 20vw;
+  padding-left: 25px;
+  border-right: 25px;
+}
+
+body main .contacts-list-area table tbody td:first-child {
+  width: 5vw;
+  padding-left: 0;
+}
+
+body main .contacts-list-area table tbody td:last-child {
+  width: 10vw;
 }
 
 body main .contacts-list-area table tbody tr:nth-child(odd) {
@@ -183,6 +205,9 @@ body main .contacts-list-area table .template-buttons-container {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body main .contacts-list-area table .template-buttons-container .fas {
@@ -199,21 +224,22 @@ body main .contacts-list-area table .template-buttons-container .fas {
     width: 90%;
   }
   .add-contact-area .input-continent {
-    background-color: blue;
+    padding: 1vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    width: 100%;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 40vh;
   }
   .add-contact-area .input-continent .input {
-    width: 45%;
+    width: 47%;
+    margin-bottom: 2vh;
   }
   .add-contact-area .button-area {
     display: -webkit-box;
@@ -246,6 +272,11 @@ body main .contacts-list-area table .template-buttons-container .fas {
             box-shadow: 0 2px #2F3E4C;
     -webkit-transform: translate(5px, 5px);
             transform: translate(5px, 5px);
+  }
+  .add-contact-area .contacts-list-area {
+    width: 100vw;
+    background-color: violet;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=styles.css.map */
