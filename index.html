@@ -29,7 +29,8 @@
         <div class="line"></div>
     </div>
     <main>
-        <section class="add-contact-area">
+        <!-- Input Area -->
+        <section class="add-contact-area"> 
             <div class="input-continent">
                 <input class="input" type="text" placeholder="Id" id="input-id" disabled>
                 <input class="input" type="text" placeholder="Name" id="input-name" required>
@@ -38,22 +39,25 @@
                 <input class="input" type="email" placeholder="Mail" id="input-mail">
             </div>
             
+            <!-- Button area -->
             <div class="button-area">
                 <button class="button" type="reset" id="clear">Clear inputs</button>
                 <button class="button" type="submit" id="add"></button>
             </div>
         </section>
         <div class="line"></div>
+
+        <!-- Contacts List -->
         <section class="contacts-list-area">
             <table>
                 <thead>
                     <tr class="table-header">
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Surname</th>
-                        <th>Telephone</th>
-                        <th>Mail</th>
-                        <th>Actions</th>
+                        <th class="contact-column">Id</th>
+                        <th class="contact-column">Name</th>
+                        <th class="contact-column">Surname</th>
+                        <th class="contact-column">Telephone</th>
+                        <th class="contact-column">Mail</th>
+                        <th class="contact-column">Actions</th>
                     </tr>
                 </thead>
                 <tbody id="contacts"></tbody> <!-- Here we´ll place the contacts info template -->
