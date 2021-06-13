@@ -217,8 +217,71 @@ body main .contacts-list-area table .template-buttons-container .fas {
   margin-left: 2px;
 }
 
+/****************************************************/
 /* Media Queries */
 @media (orientation: landscape) {
+  /* Inputs area */
+  .add-contact-area {
+    width: 90%;
+  }
+  .add-contact-area .input-continent {
+    padding: 1vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 40vh;
+  }
+  .add-contact-area .input-continent .input {
+    width: 47%;
+    margin-bottom: 2vh;
+  }
+  .add-contact-area .button-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 10vh;
+    padding: 1.5vh;
+    margin-top: 2vh;
+  }
+  .add-contact-area .button-area .button {
+    height: 40px;
+    width: 40vw;
+    max-width: 230px;
+    font-weight: bold;
+    color: #495865;
+    background-color: #FFD43B;
+    border: 2px solid #495865;
+    -webkit-box-shadow: 3px 7px #2D3F4E;
+            box-shadow: 3px 7px #2D3F4E;
+    border-radius: 5px;
+  }
+  .add-contact-area .button-area .button:hover {
+    background-color: #FBB004;
+  }
+  .add-contact-area .button-area .button:active {
+    background-color: #E7695D;
+    -webkit-box-shadow: 0 2px #2F3E4C;
+            box-shadow: 0 2px #2F3E4C;
+    -webkit-transform: translate(5px, 5px);
+            transform: translate(5px, 5px);
+  }
+  .add-contact-area .contacts-list-area {
+    width: 100vw;
+    background-color: violet;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 762px) {
   /* Inputs area */
   .add-contact-area {
     width: 90%;
