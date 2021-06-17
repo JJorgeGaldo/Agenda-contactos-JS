@@ -22,19 +22,13 @@ document.addEventListener("DOMContentLoaded", function(){
     // Lets create an object that will contains the contacts list
     let contactsList = {}
 
-    
-   
-    
-
-    
-
     // First of all I'm going to load the JSON data and show it in the web.
     // For doing so I need to fetch the JSON data.
     const fetchData = async() => {
     try{
         const res = await fetch ("../data.json")
         data = await res.json()
-        contactsList = data
+        contactsList = data //! We can avoid to create the 'data' variable
         //console.log(data)
         //console.log(contactsList)
         putContacts()
